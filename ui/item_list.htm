@@ -1,0 +1,49 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">TR Tools</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Items</li>
+  </ol>
+</nav>
+
+<div class="card" >
+    <div class="card-header">
+        <h5 class="card-title">
+
+        </h5>
+    </div>
+    <div class="card-body p-2">
+      <button type="button" class="btn btn-outline-secondary">Add Filter</button>
+      <button type="button" class="btn btn-outline-secondary">Exclude</button>
+      <button type="button" class="btn btn-outline-info">Apply Operation</button>
+    </div>
+    <div class="card-footer p-2">
+      <include href="comp_pagination.htm" />
+    </div>
+    <div class="card-footer" style='padding:0px;'>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Icon</th>
+                <th scope="col">Name</th>
+                <th scope="col">Id</th>
+                <th scope="col">Cid</th>
+                <th scope="col">Aug</th>
+              </tr>
+            </thead>
+            <tbody>
+              <F3:repeat group="{{@rs['data']}}" value="{{@item}}">
+                <tr>
+                    <td><img src="{{@item['icon']}}" class="rounded float-start" alt="..."></td>
+                    <td>{{@item['className']}}</td>
+                    <td>{{@item['itemTemplateId']}}</td>     
+                    <td>{{@item['itemClassId']}}</td>
+                    <td>{{@item['augList']}}</td>                
+                </tr>
+            </F3:repeat>
+            </tbody>
+        </table>
+    </div>
+    <div class="card-footer p-2">
+      <include href="comp_pagination.htm" />
+    </div>
+  </div>
